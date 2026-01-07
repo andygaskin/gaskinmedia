@@ -102,7 +102,8 @@ const activeProject = computed(() => {
           @click="toggleActiveProject(project.id)"
         >
           <div
-            loading="lazy"
+            loading="eager"
+            fetchpriority="high"
             class="the_image"
             :style="{ backgroundImage: `url('/project-images/${project.image_url}')` }"
           ></div>
@@ -120,7 +121,7 @@ const activeProject = computed(() => {
           @click="toggleActiveProject(project.id)"
           v-for="project in otherProjects"
           :key="project.id"
-          class="block_holder"
+          class="block_holder tier2"
         >
           <div
             loading="lazy"
