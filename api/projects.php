@@ -1,33 +1,33 @@
 <?PHP
 
-//CONNECT to the database=======================
-include("connection.php");
-$connection = mysql_connect($db_database, $db_username, $db_password) or die('I cannot connect to the database because: ' . mysql_error());
-mysql_select_db($selected_database);
-//=============================================
+declare(strict_types=1);
+
+header('Content-Type: application/json; charset=utf-8');
+
+require __DIR__ . '/connection.php';
+
+mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
 
 try {
-    //Get the news
-    $query = "SELECT * FROM projects WHERE active=1 ORDER BY sort_order ASC, RAND()";
-    $result = mysql_query($query);
-    //end news get
+    $mysqli = new mysqli($db_database, $db_username, $db_password, $selected_database);
+    $mysqli->set_charset('utf8mb4');
 
+    $sql = "
+    SELECT *
+    FROM projects
+    WHERE active = ?
+    ORDER BY sort_order ASC
+  ";
 
-    while ($row = mysql_fetch_array($result, MYSQL_ASSOC)) {
-        $rows[] = $row;
-    }
+    $result = $mysqli->execute_query($sql, [1]);
+    $rows = $result->fetch_all(MYSQLI_ASSOC);
 
-
-    if (empty($rows)) {
-        echo json_encode([]);
-        exit;
-    }
-
-
-    echo json_encode($rows);
-} catch (Exception $e) {
+    echo json_encode($rows ?: [], JSON_UNESCAPED_UNICODE);
+} catch (Throwable $e) {
     http_response_code(500);
     echo json_encode([
-        'error' => 'Could not load latest news.',
+        'error' => 'Could not load projects.',
+        // Uncomment temporarily if needed:
+        // 'details' => $e->getMessage(),
     ]);
 }
