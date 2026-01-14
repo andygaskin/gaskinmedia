@@ -42,12 +42,12 @@ dist
 /cypress/videos/
 /cypress/screenshots/
 
-
+connection.php
 __screenshots__/
-api/
 **/*mock*
 node_modules/
 .output/
 .nuxt/
 dist/
 .env*
+_db.php
