@@ -95,7 +95,7 @@ function togglePopOver(event: Event) {
     </div>
     <div class="page_wrapper">
       <p class="body_text professional_summary">
-        <strong>Senior Frontend / UX Engineer</strong> with 15+ years of
+        <strong>Senior Frontend / UX Engineer</strong> with 15 years of
         experience designing and building platforms from zero to scale. I lead
         product direction and front-end architecture, delivering responsive,
         accessible systems for statewide and national audiences. A background in
@@ -104,7 +104,7 @@ function togglePopOver(event: Event) {
         applications that don't make the user
         <button @click="togglePopOver" class="definition">have to think</button
         >-- all while balancing the bottom-line of real-world business
-        constraints. Full-stack capable (Nuxt/Vue, PHP, MySQL) with a passion
+        constraints. Full-stack capable (Vue / Nuxt, PHP, MySQL) with a passion
         for building maintainable, modern design systems.
       </p>
       <ul class="socials">
