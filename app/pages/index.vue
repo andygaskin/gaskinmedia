@@ -8,7 +8,7 @@ useHead({
     {
       name: "description",
       content:
-        "Portfolio of Andy Gaskin, Software Engineer - frontend UI/UX focus, specializing in Vue / Nuxt.",
+        "Portfolio of Andy Gaskin, Software Engineer - frontend UI/UX strategy, specializing in Vue / Nuxt.",
     },
   ],
   //   link: [
@@ -72,7 +72,7 @@ function markLoaded(id: number) {
   loaded[id] = true;
 }
 
-// This function runs for every image when the component mounts
+// runs for every image when the component mounts
 const checkImageCache = (el: any, id: number) => {
   if (el && el.complete) {
     markLoaded(id);
@@ -95,14 +95,13 @@ function togglePopOver(event: Event) {
     </div>
     <div class="page_wrapper">
       <p class="body_text professional_summary">
-        <strong>Senior Frontend / UX Engineer</strong> with 15 years of
-        experience designing and building platforms from zero to scale. I lead
-        product direction and front-end architecture, delivering responsive, accessible systems for statewide and
-        national audiences. With deep strength in CSS and layout architecture, I bring a visual-design mindset to
-        engineering, tastefully translating complex requirements into clear and polished applications that don't make
-        the user <button @click="togglePopOver" class="definition">have to
-          think</button>. Full-stack capable (Vue / Nuxt, PHP, MySQL) with a passion for building maintainable, modern
-        design systems.
+        <strong>Senior Frontend / UX Engineer</strong> with 15 years of experience leading product direction, front-end
+        architecture, and workflow modernization. I bring a strategic, cross-disciplinary perspective shaped by software
+        engineering, UX, and years of creative production experience, helping teams create products that
+        look, feel, and function tastefully and clearly. I specialize in translating complex requirements into
+        maintainable, intuitive applications, while mentoring teams on modern front-end practices and scalable
+        workflows that don't make our users <button @click="togglePopOver" class="definition">have to
+          think</button>.
       </p>
       <ul class="socials">
         <li>
@@ -190,7 +189,7 @@ function togglePopOver(event: Event) {
       <div class="image_holder">
         <img src="/krug.webp" />
       </div>
-      <div class="body_text">
+      <div class="body_text"><br />
         Yes, this is a Steve Krug reference. It's been ages since I've read his
         book (parts of which I'm sure are painfully out of date by now), but his
         user-centric principles continue to stick with me. Still highly
