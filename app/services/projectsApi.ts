@@ -18,9 +18,9 @@ import projectsMock from "@/mock/mockProjects.json";
 export async function fetchProjects(): Promise<ProjectItem[]> {
   if (import.meta.dev) {
     return projectsMock as ProjectItem[];
+  } else {
+    return await $fetch<ProjectItem[]>(
+      "https://gaskinmedia.com/api/projects.php",
+    );
   }
-
-  return await $fetch<ProjectItem[]>(
-    "https://gaskinmedia.com/api/projects.php",
-  );
 }

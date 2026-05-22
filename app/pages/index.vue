@@ -8,7 +8,7 @@ useHead({
     {
       name: "description",
       content:
-        "Portfolio of Andy Gaskin, Software Engineer - frontend UI/UX strategy, specializing in Vue / Nuxt.",
+        "Portfolio of Andy Gaskin, Software Engineer - frontend UI/UX strategy and Product Design.",
     },
   ],
   //   link: [
@@ -32,6 +32,9 @@ useHead({
   //     },
   //   ],
 });
+
+const route = useRoute()
+const showVideo = computed(() => route.path === '/conversation' || route.path === '/conversation/')
 
 const {
   data: projects,
@@ -94,15 +97,22 @@ function togglePopOver(event: Event) {
       </div>
     </div>
     <div class="page_wrapper">
+
       <p class="body_text professional_summary">
-        <strong>Senior Frontend / UX Engineer</strong> with 15 years of experience leading product direction, front-end
-        architecture, and workflow modernization. I bring a strategic, cross-disciplinary perspective shaped by software
-        engineering, UX, and years of creative production experience, helping teams create products that
-        look, feel, and function tastefully and clearly. I specialize in translating complex requirements into
-        maintainable, intuitive applications, while mentoring teams on modern front-end practices and scalable
-        workflows that don't make our users <button @click="togglePopOver" class="definition">have to
-          think</button>.
+        <strong>Senior Frontend Engineer / UX Strategist</strong> with 20 years of experience building and modernizing
+        complex web applications. I bring a design-minded engineering perspective to product strategy, translating
+        complex systems
+        into clear, polished, and maintainable user experiences. A dedicated practitioner of the <button
+          @click="togglePopOver" class="definition">Don't Make Me Think</button> philosophy, I help teams set a high
+        bar
+        for modern applications that are practical to develop, easy to use, and
+        built to last.
+
       </p>
+
+
+
+
       <ul class="socials">
         <li>
           <a href="https://vimeo.com/263925614" target="_blank"><i class="pi pi-video" /><span>Video
@@ -121,7 +131,14 @@ function togglePopOver(event: Event) {
             <i class="pi pi-github" /><span>GitHub</span></a>
         </li>
       </ul>
-      <!-- <h2>Recent Highlights</h2> -->
+      <!--yay youtube-->
+      <div v-if="showVideo" class="youtube_holder"> <iframe class="the_video" width="560" height="315"
+          src="https://www.youtube.com/embed/CRzV0LRu5CU?si=mM5hQToM1lPRTv5U&rel=0" title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+      <!--END youtube-->
+      <div class="separator" />
 
       <div class="main_card_holder featured">
         <button @click="toggleActiveProject(project.id)" v-for="project in featuredProjects" :key="project.id"
@@ -139,7 +156,7 @@ function togglePopOver(event: Event) {
 
       <!--END featured-->
 
-      <div class="separator" />
+
       <h2 class="mobile_show">Notable Past Projects:</h2>
 
       <div class="main_card_holder">
@@ -198,4 +215,3 @@ function togglePopOver(event: Event) {
     </div>
   </Popover>
 </template>
->

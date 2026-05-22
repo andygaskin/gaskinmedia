@@ -22,6 +22,7 @@ dd {
   --general-text-color: #4d4d4f;
   --box-shadow:
     0.6px 1.1px 3.9px rgb(0 0 0 / 4%), 5px 9px 21px rgba(0, 0, 0, 0.1);
+  --gap_large: 50px;
 }
 
 body {
@@ -84,6 +85,11 @@ h2 {
   }
 }
 
+.columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
 .project_title {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   font-size: 1.1rem;
@@ -110,7 +116,7 @@ h2 {
   margin-bottom: 50px;
 
   &.featured {
-    width: 60%;
+    width: 65%;
     margin-bottom: 20px;
     margin-top: 0;
     grid-template-columns: 1fr 1fr;
@@ -278,6 +284,18 @@ button {
   }
 }
 
+.youtube_holder {
+  display: flex;
+  justify-content: center;
+  margin-top: var(--gap_large);
+}
+
+.the_video {
+  box-shadow: var(--box-shadow);
+  border-radius: 20px;
+  background-color: #0000000a;
+}
+
 .close_button {
   display: flex;
   background: purple !important;
@@ -352,8 +370,8 @@ button {
   box-shadow:
     0.6px 1.1px 3.9px #2f025316,
     3px 4px 15px #470ba726;
-  opacity: 0;
-  animation: rise_up 1000ms ease forwards;
+  /* opacity: 0; */
+  /* animation: rise_up 1000ms ease forwards; */
 
   @media (width<1000px) {
     width: 90%;
