@@ -391,12 +391,40 @@ button {
 }
 
 .mobile_show {
-  display: none;
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 
   @media (width<670px) {
+    position: static;
+    width: auto;
+    height: auto;
+    margin: revert;
+    overflow: visible;
+    clip: auto;
+    white-space: normal;
     display: block;
   }
 }
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
 .separator {
   height: 20px;
   border-top: 1px solid rgba(158, 146, 158, 0.295);
