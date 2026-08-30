@@ -44,7 +44,6 @@ dist
 
 connection.php
 __screenshots__/
-**/*mock*
 node_modules/
 .output/
 .nuxt/
