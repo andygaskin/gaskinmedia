@@ -65,6 +65,8 @@ const checkImageCache = (el: any, id: number) => {
 };
 
 const op = ref();
+const isDefinitionOpen = ref(false);
+
 function togglePopOver(event: Event) {
   op.value.toggle(event);
 }
@@ -85,7 +87,14 @@ function togglePopOver(event: Event) {
         a design-minded engineering perspective to product strategy, translating
         complex systems into clear, polished, and maintainable user experiences.
         A dedicated practitioner of the
-        <button @click="togglePopOver" class="definition">
+        <button
+          type="button"
+          class="definition"
+          aria-haspopup="dialog"
+          aria-controls="definition-popover"
+          :aria-expanded="isDefinitionOpen"
+          @click="togglePopOver"
+        >
           Don't Make Me Think
         </button>
         philosophy, I help teams set a high bar for modern applications that are
@@ -94,29 +103,51 @@ function togglePopOver(event: Event) {
 
       <ul class="socials">
         <li>
-          <a href="https://vimeo.com/263925614" target="_blank"
+          <a
+            href="https://vimeo.com/263925614"
+            target="_blank"
+            rel="noopener noreferrer"
             ><i class="pi pi-video" aria-hidden="true" /><span
-              >Video Production</span
+              >Video Production<span class="sr-only">
+                (opens in a new tab)</span
+              ></span
             ></a
           >
         </li>
         <li>
-          <a href="https://www.instagram.com/andygaskin/" target="_blank"
+          <a
+            href="https://www.instagram.com/andygaskin/"
+            target="_blank"
+            rel="noopener noreferrer"
             ><i class="pi pi-instagram" aria-hidden="true" /><span
-              >Photography</span
+              >Photography<span class="sr-only">
+                (opens in a new tab)</span
+              ></span
             ></a
           >
         </li>
         <li>
-          <a href="https://soundcloud.com/after-space" target="_blank">
+          <a
+            href="https://soundcloud.com/after-space"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <i class="pi pi-volume-up" aria-hidden="true" /><span
-              >Music Production</span
+              >Music Production<span class="sr-only">
+                (opens in a new tab)</span
+              ></span
             ></a
           >
         </li>
         <li>
-          <a href="https://github.com/andygaskin" target="_blank">
-            <i class="pi pi-github" aria-hidden="true" /><span>GitHub</span></a
+          <a
+            href="https://github.com/andygaskin"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <i class="pi pi-github" aria-hidden="true" /><span
+              >GitHub<span class="sr-only"> (opens in a new tab)</span></span
+            ></a
           >
         </li>
       </ul>
@@ -238,9 +269,13 @@ function togglePopOver(event: Event) {
         <div v-html="activeProject?.description"></div>
 
         <div v-if="activeProject?.project_url" class="project_link">
-          <a :href="`https://${activeProject.project_url}`" target="_blank">{{
-            activeProject.project_url
-          }}</a
+          <a
+            :href="`https://${activeProject.project_url}`"
+            target="_blank"
+            rel="noopener noreferrer"
+            >{{ activeProject.project_url }}<span class="sr-only">
+              (opens in a new tab)</span
+            ></a
           >&nbsp;
           <i
             class="pi pi-external-link"
@@ -264,8 +299,14 @@ function togglePopOver(event: Event) {
       ></Button
     ></template>
   </Dialog>
-  <Popover ref="op" class="definition_panel">
-    <div class="project_detail">
+  <Popover
+    id="definition-popover"
+    ref="op"
+    class="definition_panel"
+    @show="isDefinitionOpen = true"
+    @hide="isDefinitionOpen = false"
+  >
+    <div class="definition_content">
       <div class="image_holder">
         <img
           src="/krug.webp"
@@ -273,7 +314,6 @@ function togglePopOver(event: Event) {
         />
       </div>
       <div class="body_text">
-        <br />
         Yes, this is a Steve Krug reference. It's been ages since I've read his
         book (parts of which I'm sure are painfully out of date by now), but his
         user-centric principles continue to stick with me. Still highly

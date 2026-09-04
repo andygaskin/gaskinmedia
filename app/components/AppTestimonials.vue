@@ -1,57 +1,91 @@
 <template>
-  <div class="testimonials">
-    <p>
-      "I wanted to let you know how impressed I am with your work. The video and
-      web site are both first class."<br />
-      <em>-Bayada Nurses</em><br />
-      <br />
-      "Major compliments on the website coming to us from fellow advocates."<br />
-      <em>-Pennsylvania Partnerships for Children</em><br />
-    </p>
+  <section class="testimonials" aria-labelledby="testimonials-heading">
+    <h2 id="testimonials-heading" class="sr-only">Client testimonials</h2>
 
-    <p>
-      <br />"Nice work, we all appreciate the effort and ease with which the
-      video project has been handled." <br /><em
-        >-Association of Independent Colleges and Universities of
-        Pennsylvania</em
-      ><br />
-    </p>
+    <figure>
+      <blockquote>
+        <p>
+          I wanted to let you know how impressed I am with your work. The video
+          and web site are both first class.
+        </p>
+      </blockquote>
+      <figcaption>— Bayada Nurses</figcaption>
+    </figure>
 
-    <p>
-      <br />
-      "Let me say how fabulous the web site is and what positive feedback we've
-      had so far. Thanks so much for your work on this project. We love the
-      site."<br />
-      <em>-FirstSteps Pennsylvania</em>
-    </p>
-    <p>
-      <br />
-      "We're very happy with the website - it is so user friendly and looks so
-      nice." <br />
-      <em>-Dairy Policy Action Coalition</em>
-    </p>
-    <p>
-      <br />
-      "You did a terrific job on this website."<br />
-      <em>-PA Independent Oil and Gas Association</em>
-    </p>
-    <p>
-      <br />
-      "We just wanted to express again how much we love the website!" <br />
-      <em>-Rich Valley Gymnastics</em>
-    </p>
-    <p>
-      <br />
-      "Thank you so much for your work ... I can't believe you got it done so
-      quickly, it looks great." <br />
-      <em>-Clear Coalition </em>
-    </p>
+    <figure>
+      <blockquote>
+        <p>
+          Major compliments on the website coming to us from fellow advocates.
+        </p>
+      </blockquote>
+      <figcaption>— Pennsylvania Partnerships for Children</figcaption>
+    </figure>
 
-    <p>
-      <br />
-      "This is so much faster than the previous version! This child care
-      provider is really happy with the new website!" <br />
-      <em>-Director of Early Childhood Programs </em>
-    </p>
-  </div>
+    <figure>
+      <blockquote>
+        <p>
+          Nice work, we all appreciate the effort and ease with which the video
+          project has been handled.
+        </p>
+      </blockquote>
+      <figcaption>
+        — Association of Independent Colleges and Universities of Pennsylvania
+      </figcaption>
+    </figure>
+
+    <figure>
+      <blockquote>
+        <p>
+          Let me say how fabulous the web site is and what positive feedback
+          we've had so far. Thanks so much for your work on this project. We love
+          the site.
+        </p>
+      </blockquote>
+      <figcaption>— FirstSteps Pennsylvania</figcaption>
+    </figure>
+
+    <figure>
+      <blockquote>
+        <p>
+          We're very happy with the website—it is so user friendly and looks so
+          nice.
+        </p>
+      </blockquote>
+      <figcaption>— Dairy Policy Action Coalition</figcaption>
+    </figure>
+
+    <figure>
+      <blockquote>
+        <p>You did a terrific job on this website.</p>
+      </blockquote>
+      <figcaption>— PA Independent Oil and Gas Association</figcaption>
+    </figure>
+
+    <figure>
+      <blockquote>
+        <p>We just wanted to express again how much we love the website!</p>
+      </blockquote>
+      <figcaption>— Rich Valley Gymnastics</figcaption>
+    </figure>
+
+    <figure>
+      <blockquote>
+        <p>
+          Thank you so much for your work ... I can't believe you got it done so
+          quickly, it looks great.
+        </p>
+      </blockquote>
+      <figcaption>— Clear Coalition</figcaption>
+    </figure>
+
+    <figure>
+      <blockquote>
+        <p>
+          This is so much faster than the previous version! This child care
+          provider is really happy with the new website!
+        </p>
+      </blockquote>
+      <figcaption>— Director of Early Childhood Programs</figcaption>
+    </figure>
+  </section>
 </template>
