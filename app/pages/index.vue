@@ -50,7 +50,7 @@ const activeProject = computed(() => {
   return projects.value.find((p) => p.id === selectedProjectId.value) ?? null;
 });
 
-// This reactive object will track which IDs are loaded
+// This  will track which IDs are loaded
 const loaded = reactive<Record<number, boolean>>({});
 
 function markLoaded(id: number) {
@@ -82,11 +82,14 @@ function togglePopOver(event: Event) {
     </div>
     <div class="page_wrapper">
       <p class="body_text professional_summary">
-        <strong>Senior Frontend Engineer / UX Strategist</strong> with 20 years
-        of experience building and modernizing complex web applications. I bring
-        a design-minded engineering perspective to product strategy, translating
-        complex systems into clear, polished, and maintainable user experiences.
-        A dedicated practitioner of the
+        <strong
+          >UI+UX Strategist / Frontend Engineer with 20 years of experience
+          designing, rethinking, and building complex web applications.</strong
+        >
+
+        <br /><br />Andy Gaskin brings a broad cross-disciplinary perspective to
+        software, with an instinct for identifying problems-- before they appear
+        on the horizon. A dedicated practitioner of the
         <button
           type="button"
           class="definition"
@@ -97,8 +100,8 @@ function togglePopOver(event: Event) {
         >
           Don't Make Me Think
         </button>
-        philosophy, I help teams set a high bar for modern applications that are
-        practical to develop, easy to use, and built to last.
+        philosophy, he believes the best applications clarify the path forward,
+        build trust, and leave customers thinking, "Hey, that wasn't so bad."
       </p>
 
       <ul class="socials">
@@ -273,9 +276,8 @@ function togglePopOver(event: Event) {
             :href="`https://${activeProject.project_url}`"
             target="_blank"
             rel="noopener noreferrer"
-            >{{ activeProject.project_url }}<span class="sr-only">
-              (opens in a new tab)</span
-            ></a
+            >{{ activeProject.project_url
+            }}<span class="sr-only"> (opens in a new tab)</span></a
           >&nbsp;
           <i
             class="pi pi-external-link"
@@ -316,8 +318,8 @@ function togglePopOver(event: Event) {
       <div class="body_text">
         Yes, this is a Steve Krug reference. It's been ages since I've read his
         book (parts of which I'm sure are painfully out of date by now), but his
-        user-centric principles continue to stick with me. Still highly
-        recommended for anyone interested in UX or thoughtful software design.
+        user-centric principles continue to stick with me. Highly recommended
+        for anyone interested in UX or thoughtful software design.
       </div>
     </div>
   </Popover>
