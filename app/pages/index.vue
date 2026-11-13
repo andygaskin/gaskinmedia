@@ -160,8 +160,8 @@ function togglePopOver(event: Event) {
           class="the_video"
           width="560"
           height="315"
-          src="https://www.youtube.com/embed/CRzV0LRu5CU?si=mM5hQToM1lPRTv5U&rel=0"
-          title="Conversation with Andy Gaskin"
+          src="https://www.youtube.com/embed/0_Y11Xyej34?si=LHdgPo6O6Un0q2N4&rel=0"
+          title="A Conversation with Andy Gaskin"
           frameborder="0"
           allow="
             accelerometer;
