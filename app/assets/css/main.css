@@ -296,12 +296,30 @@ button {
 }
 
 .youtube_holder {
-  display: flex;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.5fr);
+  align-items: center;
+  gap: clamp(24px, 4vw, 60px);
   margin-top: var(--gap_large);
+
+  & h2 {
+    text-align: right;
+  }
+
+  @media (width<800px) {
+    grid-template-columns: minmax(0, 1fr);
+
+    & h2 {
+      text-align: center;
+    }
+  }
 }
 
 .the_video {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
   box-shadow: var(--box-shadow);
   border-radius: 20px;
   background-color: #0000000a;
@@ -453,75 +471,6 @@ button {
   margin-top: 10px;
 }
 
-.socials {
-  list-style: none;
-  display: flex;
-  margin: 0;
-  padding: 0;
-
-  /* margin-bottom: 30px; */
-  align-content: center;
-  justify-content: center;
-  gap: 10px;
-  font-size: 0.8rem;
-  transition: all 0.2s;
-  text-align: center;
-
-  margin-top: 21px;
-
-  @media (width<600px) {
-    width: 80%;
-    margin: 0 auto;
-    margin-top: 20px;
-  }
-
-  @media (width<370px) {
-    flex-direction: column;
-    gap: 0;
-  }
-  /* & li {
-    display: block;
-    opacity: 0;
-    transform: translateY(10px);
-    animation: rise_up 1000ms ease forwards;
-    animation-delay: calc(sibling-index() * 0.2s);
-  } */
-  & a {
-    color: #993199;
-    padding: 7px;
-    border-radius: 5px;
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
-    flex-direction: row;
-
-    gap: 9px;
-    border: 1px solid #e7e7e7;
-    border-top: 1px solid #f8f8f8;
-    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-    transition: all 0.3s;
-    height: 100%;
-    &:hover {
-      color: purple;
-      border: rgb(224, 220, 233) 1px solid;
-    }
-
-    &:hover span {
-      text-decoration: underline;
-    }
-
-    &:active {
-      opacity: 0.8;
-    }
-
-    @media (width<600px) {
-      gap: 5px;
-      justify-content: center;
-    }
-  }
-}
 
 .email {
   margin-bottom: 40px;

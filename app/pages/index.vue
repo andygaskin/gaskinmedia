@@ -104,64 +104,16 @@ function togglePopOver(event: Event) {
         build trust, and leave customers thinking, "Hey, that wasn't so bad."
       </p>
 
-      <ul class="socials">
-        <li>
-          <a
-            href="https://vimeo.com/263925614"
-            target="_blank"
-            rel="noopener noreferrer"
-            ><i class="pi pi-video" aria-hidden="true" /><span
-              >Video Production<span class="sr-only">
-                (opens in a new tab)</span
-              ></span
-            ></a
-          >
-        </li>
-        <li>
-          <a
-            href="https://www.instagram.com/andygaskin/"
-            target="_blank"
-            rel="noopener noreferrer"
-            ><i class="pi pi-instagram" aria-hidden="true" /><span
-              >Photography<span class="sr-only">
-                (opens in a new tab)</span
-              ></span
-            ></a
-          >
-        </li>
-        <li>
-          <a
-            href="https://soundcloud.com/after-space"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <i class="pi pi-volume-up" aria-hidden="true" /><span
-              >Music Production<span class="sr-only">
-                (opens in a new tab)</span
-              ></span
-            ></a
-          >
-        </li>
-        <li>
-          <a
-            href="https://github.com/andygaskin"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <i class="pi pi-github" aria-hidden="true" /><span
-              >GitHub<span class="sr-only"> (opens in a new tab)</span></span
-            ></a
-          >
-        </li>
-      </ul>
+      <AppSocialLinks />
       <!--yay youtube-->
       <div v-if="showVideo" class="youtube_holder">
+        <h2>A Real-World UI/UX<br />Walkthrough:</h2>
         <iframe
           class="the_video"
           width="560"
           height="315"
           src="https://www.youtube.com/embed/0_Y11Xyej34?si=LHdgPo6O6Un0q2N4&rel=0"
-          title="A Conversation with Andy Gaskin"
+          title="A Conversation with Andy Gaskin: A Real-World UI/UX Walkthrough"
           frameborder="0"
           allow="
             accelerometer;
@@ -241,6 +193,7 @@ function togglePopOver(event: Event) {
       <AppTestimonials />
     </div>
   </main>
+  <AppFooter />
   <Dialog
     v-model:visible="visible"
     modal
