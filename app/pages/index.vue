@@ -74,61 +74,65 @@ function togglePopOver(event: Event) {
 <template>
   <main>
     <ScrollTop icon="pi pi-arrow-up" />
-    <div id="main_box" class="generic_text">
-      <h1>Andy Gaskin</h1>
-      <div class="email">
-        <a href="mailto:andy@andygaskin.com">andy@andygaskin.com</a>
+    <div class="search-layout-background">
+      <div id="main_box" class="generic_text">
+        <h1>Andy Gaskin</h1>
+        <div class="email">
+          <a href="mailto:andy@andygaskin.com">andy@andygaskin.com</a>
+        </div>
+      </div>
+      <div class="page_wrapper">
+        <p class="body_text professional_summary">
+          <strong
+            >UI+UX Strategist / Frontend Engineer with 20 years of experience
+            designing, rethinking, and building complex web applications.</strong
+          >
+
+          <br /><br />Andy Gaskin brings a broad cross-disciplinary perspective to
+          software, with an instinct for identifying problems-- before they appear
+          on the horizon. A dedicated practitioner of the
+          <button
+            type="button"
+            class="definition"
+            aria-haspopup="dialog"
+            aria-controls="definition-popover"
+            :aria-expanded="isDefinitionOpen"
+            @click="togglePopOver"
+          >
+            Don't Make Me Think
+          </button>
+          philosophy, he believes the best applications clarify the path forward,
+          build trust, and leave customers thinking, "Hey, that wasn't so bad."
+        </p>
+
+        <AppSocialLinks />
+        <!--yay youtube-->
+        <div v-if="showVideo" class="youtube_holder">
+          <h2>A Real-World UI/UX<br />Walkthrough:</h2>
+          <iframe
+            class="the_video"
+            width="560"
+            height="315"
+            src="https://www.youtube.com/embed/0_Y11Xyej34?si=LHdgPo6O6Un0q2N4&rel=0"
+            title="A Conversation with Andy Gaskin: A Real-World UI/UX Walkthrough"
+            frameborder="0"
+            allow="
+              accelerometer;
+              autoplay;
+              clipboard-write;
+              encrypted-media;
+              gyroscope;
+              picture-in-picture;
+              web-share;
+            "
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen
+          ></iframe>
+        </div>
+        <!--END youtube-->
       </div>
     </div>
-    <div class="page_wrapper">
-      <p class="body_text professional_summary">
-        <strong
-          >UI+UX Strategist / Frontend Engineer with 20 years of experience
-          designing, rethinking, and building complex web applications.</strong
-        >
-
-        <br /><br />Andy Gaskin brings a broad cross-disciplinary perspective to
-        software, with an instinct for identifying problems-- before they appear
-        on the horizon. A dedicated practitioner of the
-        <button
-          type="button"
-          class="definition"
-          aria-haspopup="dialog"
-          aria-controls="definition-popover"
-          :aria-expanded="isDefinitionOpen"
-          @click="togglePopOver"
-        >
-          Don't Make Me Think
-        </button>
-        philosophy, he believes the best applications clarify the path forward,
-        build trust, and leave customers thinking, "Hey, that wasn't so bad."
-      </p>
-
-      <AppSocialLinks />
-      <!--yay youtube-->
-      <div v-if="showVideo" class="youtube_holder">
-        <h2>A Real-World UI/UX<br />Walkthrough:</h2>
-        <iframe
-          class="the_video"
-          width="560"
-          height="315"
-          src="https://www.youtube.com/embed/0_Y11Xyej34?si=LHdgPo6O6Un0q2N4&rel=0"
-          title="A Conversation with Andy Gaskin: A Real-World UI/UX Walkthrough"
-          frameborder="0"
-          allow="
-            accelerometer;
-            autoplay;
-            clipboard-write;
-            encrypted-media;
-            gyroscope;
-            picture-in-picture;
-            web-share;
-          "
-          referrerpolicy="strict-origin-when-cross-origin"
-          allowfullscreen
-        ></iframe>
-      </div>
-      <!--END youtube-->
+    <div class="page_wrapper projects-wrapper">
       <div class="separator" />
 
       <section aria-labelledby="featured-projects-heading">

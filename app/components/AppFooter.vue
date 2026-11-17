@@ -1,28 +1,35 @@
 <script setup lang="ts">
 const year = new Date().getFullYear();
-
 </script>
 
 <template>
-  <footer class="site-footer page_wrapper">
-    <h3 class="footer-thanks">
-      Thanks! <i class="pi pi-star-fill" aria-hidden="true" />
-    </h3>
-    <a class="footer-email" href="mailto:andy@andygaskin.com">
-      andy@andygaskin.com
-    </a>
-    <nav aria-label="Footer social links">
-      <AppSocialLinks />
-    </nav>
-    <p class="footer-copyright">&copy; {{ year }} Andy Gaskin</p>
+  <div class="separator footer-separator"></div>
+  <footer class="site-footer search-layout-background">
+    <div class="page_wrapper">
+      <h3 class="footer-thanks">
+        Thanks!
+        <i class="pi pi-star-fill pi-spin" aria-hidden="true" />
+      </h3>
+      <a class="footer-email" href="mailto:andy@andygaskin.com">
+        andy@andygaskin.com
+      </a>
+      <nav aria-label="Footer social links">
+        <AppSocialLinks />
+      </nav>
+      <p class="footer-copyright">&copy; {{ year }} Andy Gaskin</p>
+    </div>
   </footer>
 </template>
 
 <style scoped>
+.footer-separator {
+  transform: scaleY(-1);
+}
+
 .site-footer {
-  margin-top: var(--gap_large);
-  padding: clamp(32px, 5vw, 64px) 0 32px;
-  border-top: 1px solid rgb(27 42 103 / 15%);
+  background-color: rgb(27 42 103 / 3%);
+  padding-top: 20px;
+  padding-bottom: 50px;
   text-align: center;
   color: var(--general-text-color);
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
@@ -74,5 +81,4 @@ const year = new Date().getFullYear();
   margin: 24px 0 0;
   font-size: 0.875rem;
 }
-
 </style>

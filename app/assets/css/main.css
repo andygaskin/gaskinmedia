@@ -64,10 +64,51 @@ h2 {
   text-shadow: 0 1px 0 #fff;
 }
 
+.search-layout-background {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  padding-block: 50px;
+}
+
+.search-layout-background::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background-image: url("../images/search-pattern.svg");
+  background-repeat: repeat;
+  background-size: 1200px 600px;
+  background-position: center;
+  filter: drop-shadow(12px 20px 8px rgb(122 83 0 / 35%));
+  opacity: 0.065;
+  animation: search-pattern-drift 120s linear infinite;
+}
+
+@keyframes search-pattern-drift {
+  from {
+    background-position: center;
+  }
+  to {
+    /* Move one full tile so the loop joins seamlessly. */
+    background-position: calc(50% + 1200px) calc(50% + 600px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .search-layout-background::before {
+    animation: none;
+  }
+}
+
+.projects-wrapper > .separator:first-child {
+  margin-top: 0;
+}
+
 #main_box {
   margin: 0 auto;
   text-align: center;
-  margin-top: 50px;
 }
 
 .body_text {
@@ -457,7 +498,14 @@ button {
 
 .separator {
   height: 20px;
-  border-top: 1px solid rgba(158, 146, 158, 0.295);
+  border-top: 1px solid transparent;
+  border-image: linear-gradient(
+      to right,
+      transparent,
+      rgba(158, 146, 158, 0.295) 50%,
+      transparent
+    )
+    1;
   display: block;
   margin-top: 50px;
   background-image: radial-gradient(
@@ -470,7 +518,6 @@ button {
 .project_link {
   margin-top: 10px;
 }
-
 
 .email {
   margin-bottom: 40px;
